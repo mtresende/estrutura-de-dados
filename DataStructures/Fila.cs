@@ -40,8 +40,27 @@ public class Fila<T>
         return default(T);
     }
 
-    public int Contador() // Count
+    public int Count() // Count
     {
         return qtde;
+    }
+
+    public bool Contem(T valorItem) { // Contains
+        for (Celula<T> aux = frente.prox; aux != null; aux = aux.prox) {
+            if (EqualityComparer<T>.Default.Equals(aux.item, valorItem)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public T[] paraArray() { // ToArray
+        T[] array = new T[qtde];
+        int i = 0;
+        for (Celula<T> aux = frente.prox; aux != null; aux = aux.prox) {
+            array[i] = aux.item;
+            i++;
+        }
+        return array;
     }
 }

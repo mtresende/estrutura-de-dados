@@ -10,14 +10,11 @@ public class Program
         fila.Enfileira(3);
         fila.Enfileira(4);
         fila.Enfileira(5);
+        
+        int[] array = fila.paraArray();
 
-        int tamanhoFila = fila.Contador();
-
-        Console.WriteLine("Quantidade de itens: " + tamanhoFila + "\n");
-
-        for (int i = 0; i < tamanhoFila; i++)
-        {
-            Console.WriteLine(fila.Desenfileira());
+        foreach (int item in array) {
+            Console.WriteLine(item);
         }
     }
 }
